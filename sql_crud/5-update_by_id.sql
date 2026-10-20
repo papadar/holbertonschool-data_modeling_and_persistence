@@ -1,0 +1,1 @@
+UPDATE books SET price=35.0 WHERE id=3
