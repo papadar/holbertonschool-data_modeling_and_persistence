@@ -1,0 +1,1 @@
+SELECT genre, stock AS total_records FROM books GROUP BY genre
