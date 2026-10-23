@@ -1,0 +1,1 @@
+SELECT MIN(price) AS lowest_value FROM books

@@ -1,0 +1,1 @@
+SELECT MAX(stock) AS highest_value FROM books

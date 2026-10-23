@@ -1,0 +1,1 @@
+SELECT SUM(stock) AS TotalValue FROM books
