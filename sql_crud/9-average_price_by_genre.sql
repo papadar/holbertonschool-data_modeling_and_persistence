@@ -1,0 +1,1 @@
+SELECT genre, AVG(price) total_records FROM books GROUP BY genre

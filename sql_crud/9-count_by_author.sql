@@ -1,0 +1,1 @@
+SELECT author, COUNT(*) AS total_records FROM books GROUP BY author

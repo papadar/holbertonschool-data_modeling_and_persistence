@@ -1,0 +1,1 @@
+SELECT genre, SUM(stock) AS TotalValue FROM books GROUP BY genre
