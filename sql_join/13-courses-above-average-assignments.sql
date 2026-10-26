@@ -1,4 +1,4 @@
-SELECT courses.title, reg_count
+SELECT courses.title
 FROM courses
 LEFT JOIN registrations
 ON courses.id = registrations.course_id
