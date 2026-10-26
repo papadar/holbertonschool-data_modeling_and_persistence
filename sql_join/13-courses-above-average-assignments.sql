@@ -1,6 +1,16 @@
-SELECT courses.title, COUNT(registrations.student_id)
+SELECT courses.title
 FROM courses
-INNER JOIN registrations
-ON courses.id = registrations.course_id
-GROUP BY courses.title, Courses.id
-ORDER BY courses.title ASC
+LEFT JOIN assignments
+ON courses.id = assignments.course_id
+GROUP BY courses.id, courses.title
+HAVING COUNT(assignments.id) > (
+    SELECT AVG(tally.ass_count * 1.0)
+    FROM (
+        SELECT COUNT(a.id) AS ass_count
+        FROM courses c
+        LEFT JOIN assignments a
+          ON a.course_id = c.id
+        GROUP BY c.id
+    ) AS tally
+)
+ORDER BY courses.title ASC;
